@@ -24,6 +24,29 @@ class Url
         $this->params = $params;
     }
 
+    public function __toString(): string
+    {
+        $url = $this->protocol.'://'.$this->host;
+
+        if (!empty($this->port)) {
+            $url = trim($url, '/');
+            $url .= ':'.$this->port;
+        }
+
+        if (!empty($this->path)) {
+            $url = trim($url, '/');
+            $url .= '/'.$this->path;
+        }
+
+        if (!empty($this->params)) {
+            $url = trim($url, '/');
+            $params = http_build_query($this->params);
+            $url .= "?${params}";
+        }
+
+        return $url;
+    }
+
     /**
      * @param string $protocol
      *
@@ -51,7 +74,7 @@ class Url
 
     /**
      * @param string $path
-     * @param array  $values If path contains string placeholder they will be replaced by these values.
+     * @param array  $values if path contains string placeholder they will be replaced by these values
      *
      * @return $this
      */
@@ -67,28 +90,5 @@ class Url
         $this->params[$name] = $value;
 
         return $this;
-    }
-
-    public function __toString(): string
-    {
-        $url = $this->protocol.'://'.$this->host;
-
-        if (!empty($this->port)) {
-            $url = trim($url, '/');
-            $url.=':'.$this->port;
-        }
-
-        if (!empty($this->path)) {
-            $url = trim($url, '/');
-            $url.='/'.$this->path;
-        }
-
-        if (!empty($this->params)) {
-            $url = trim($url, '/');
-            $params = http_build_query($this->params);
-            $url.="?${params}";
-        }
-
-        return $url;
     }
 }
