@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace DariofDev\UrlBuilder\Tests;
 
+use DariofDev\UrlBuilder\Exceptions\InvalidProtocolException;
 use DariofDev\UrlBuilder\Url;
 use PHPUnit\Framework\TestCase;
 
@@ -119,5 +120,12 @@ class UrlTest extends TestCase
         $url = new Url('foo.bar', ['foo' => ['bar' => 'baz']]);
 
         $this->assertEquals('https://foo.bar?foo%5Bbar%5D=baz', (string) $url);
+    }
+
+    public function testInvalidProtocolGiven()
+    {
+        $this->expectException(InvalidProtocolException::class);
+
+        (new Url('foo.bar'))->setProtocol('foo');
     }
 }

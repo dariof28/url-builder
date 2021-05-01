@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DariofDev\UrlBuilder;
 
+use DariofDev\UrlBuilder\Exceptions\InvalidProtocolException;
+
 class Url
 {
     private string $protocol = 'https';
@@ -22,8 +24,19 @@ class Url
         $this->params = $params;
     }
 
+    /**
+     * @param string $protocol
+     *
+     * @throws InvalidProtocolException
+     *
+     * @return $this
+     */
     public function setProtocol(string $protocol): self
     {
+        if (!in_array($protocol, Protocols::all())) {
+            throw new InvalidProtocolException('Protocol must be one of '.json_encode(Protocols::all()));
+        }
+
         $this->protocol = $protocol;
 
         return $this;
