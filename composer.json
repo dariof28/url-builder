@@ -13,7 +13,6 @@
             "email": "dariof28.dev@gmail.com"
         }
     ],
-    "homepage": "https://github.com/dariof28/url-builder",
     "require": {
         "php": "^7.4|^8.0",
         "ext-json": "*"
