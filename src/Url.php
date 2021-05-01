@@ -49,9 +49,15 @@ class Url
         return $this;
     }
 
-    public function setPath(string $path): self
+    /**
+     * @param string $path
+     * @param array  $values If path contains string placeholder they will be replaced by these values.
+     *
+     * @return $this
+     */
+    public function setPath(string $path, array $values = []): self
     {
-        $this->path = $path;
+        $this->path = vsprintf($path, $values);
 
         return $this;
     }

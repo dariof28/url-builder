@@ -128,4 +128,11 @@ class UrlTest extends TestCase
 
         (new Url('foo.bar'))->setProtocol('foo');
     }
+
+    public function testCanUsePlaceholderInPath()
+    {
+        $url = (new Url('foo.bar'))->setPath('posts/%s/comments', [1]);
+
+        $this->assertEquals('https://foo.bar/posts/1/comments', (string) $url);
+    }
 }
