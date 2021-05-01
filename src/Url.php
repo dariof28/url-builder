@@ -81,7 +81,6 @@ class Url
     public function setPath(string $path, array $values = []): self
     {
         $this->path = vsprintf($path, $values);
-
         return $this;
     }
 
