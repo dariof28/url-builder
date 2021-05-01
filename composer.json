@@ -1,0 +1,34 @@
+{
+    "name": "dariof28/url-builder",
+    "description": "This package provides a UrlBuilder to easily generate urls specifying protocol, params, port etc",
+    "keywords": [
+        "url",
+        "builder",
+        "link"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dario Finocchiaro",
+            "email": "dariof28.dev@gmail.com"
+        }
+    ],
+    "homepage": "https://github.com/dariof28/url-builder",
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5|^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DariofDev\\UrlBuilder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DariofDev\\UrlBuilder\\Tests\\": "tests"
+        }
+    }
+}
