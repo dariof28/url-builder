@@ -17,7 +17,7 @@ class UrlTest extends TestCase
     {
         $url = new Url('foo.bar');
 
-        $this->assertEquals('https://foo.bar', (string) $url);
+        $this->assertEquals('https://foo.bar/', (string) $url);
     }
 
     public function testWithDefaultParams()
