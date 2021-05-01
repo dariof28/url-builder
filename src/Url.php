@@ -1,0 +1,75 @@
+<?php
+
+declare(strict_types=1);
+
+namespace DariofDev\UrlBuilder;
+
+class Url
+{
+    private string $protocol = 'https';
+
+    private string $host;
+
+    private ?int $port = null;
+
+    private ?string $path = null;
+
+    private array $params;
+
+    public function __construct(string $host, array $params = [])
+    {
+        $this->host = $host;
+        $this->params = $params;
+    }
+
+    public function setProtocol(string $protocol): self
+    {
+        $this->protocol = $protocol;
+
+        return $this;
+    }
+
+    public function setPort(int $port): self
+    {
+        $this->port = $port;
+
+        return $this;
+    }
+
+    public function setPath(string $path): self
+    {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    public function addParam(string $name, $value): self
+    {
+        $this->params[$name] = $value;
+
+        return $this;
+    }
+
+    public function __toString(): string
+    {
+        $url = $this->protocol.'://'.$this->host;
+
+        if (!empty($this->port)) {
+            $url = trim($url, '/');
+            $url.=':'.$this->port;
+        }
+
+        if (!empty($this->path)) {
+            $url = trim($url, '/');
+            $url.='/'.$this->path;
+        }
+
+        if (!empty($this->params)) {
+            $url = trim($url, '/');
+            $params = http_build_query($this->params);
+            $url.="?${params}";
+        }
+
+        return $url;
+    }
+}
