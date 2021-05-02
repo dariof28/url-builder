@@ -2,6 +2,8 @@
 
 This php package help to build urls.
 
+![GitHub](https://img.shields.io/github/license/dariof28/url-builder) ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dariof28/url-builder) ![Packagist Downloads](https://img.shields.io/packagist/dt/dariof28/url-builder) ![Packagist Version](https://img.shields.io/packagist/v/dariof28/url-builder) [![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue.svg?style=flat-square&logo=linkedin)](https://linkedin.com/in/dariof28)
+
 ## Installation
 
 ```shell
