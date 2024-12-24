@@ -50,9 +50,9 @@ class Url
     /**
      * @param string $protocol
      *
-     * @throws InvalidProtocolException
-     *
      * @return $this
+     *
+     * @throws InvalidProtocolException
      */
     public function setProtocol(string $protocol): self
     {
