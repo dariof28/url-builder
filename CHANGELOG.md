@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Docker development container [dariof28](https://github.com/dariof28)
 
 ### Changed
-- Update composer dependecies
+- Update composer dependencies
 - Drop support for php 7
 
 ## [0.1.0] - 2021-05-01
