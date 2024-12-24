@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Immagine base PHP con Composer
-FROM php:8.2-cli
+FROM php:8.1-cli
 
 # Aggiorna pacchetti e installa le dipendenze necessarie
 RUN apt-get update && apt-get install -y \
