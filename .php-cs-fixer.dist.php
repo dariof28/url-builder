@@ -1,13 +1,13 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
+$finder = (new PhpCsFixer\Finder())
     ->in(__DIR__)
     ->name('*.php')
     ->notPath('vendor')
     ->ignoreDotFiles(true)
     ->ignoreVCS(true);
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setFinder($finder)
     ->setRiskyAllowed(true)
     ->setUsingCache(true)
@@ -24,8 +24,6 @@ return PhpCsFixer\Config::create()
         ],
         'modernize_types_casting' => true,
         'no_superfluous_phpdoc_tags' => false,
-        'no_unset_cast' => false,
-        'ordered_imports' => ['sortAlgorithm' => 'alpha'],
         'php_unit_test_class_requires_covers' => false,
         'phpdoc_add_missing_param_annotation' => ['only_untyped' => false],
         'phpdoc_no_alias_tag' => false,
@@ -33,7 +31,7 @@ return PhpCsFixer\Config::create()
             'null_adjustment' => 'always_last'
         ],
         'protected_to_private' => false,
-        'psr4' => true,
+        'psr_autoloading' => true,
         'simple_to_complex_string_variable' => false,
         'single_line_comment_style' => [
             'comment_types' => ['hash']

@@ -4,6 +4,4 @@ declare(strict_types=1);
 
 namespace DariofDev\UrlBuilder\Exceptions;
 
-class InvalidProtocolException extends \Exception
-{
-}
+class InvalidProtocolException extends \Exception {}
