@@ -92,3 +92,18 @@ $url = (new Url('foo.bar'))
     ->addParam('foo', 'bar')
     ->addParam('bar', ['baz' => 'foo']); // https://foo.bar?foo=bar&bar%5Bbaz%5D=foo
 ```
+
+## Development
+
+A simple docker container with php 8, composer and Xdebug is provided. Just run
+```shell
+docker-compose run --rm url-builder bash
+```
+
+### Code style
+
+Ensure that style rules are applied running the cs fixer before commit
+
+```shell
+./vendor/bin/php-cs-fixer fix
+```

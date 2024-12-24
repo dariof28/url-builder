@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  url-builder:
+    build: .
+    container_name: url-builder
+    volumes:
+      - ./:/app
+    ports:
+      - "9003:9003"
+    networks:
+      - devnet
+
+networks:
+  devnet:
+    driver: bridge
