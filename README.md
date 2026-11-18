@@ -97,7 +97,7 @@ $url = (new Url('foo.bar'))
 
 A simple docker container with php 8, composer and Xdebug is provided. Just run
 ```shell
-docker-compose run --rm url-builder bash
+docker compose run --rm url-builder bash
 ```
 
 ### Code style
