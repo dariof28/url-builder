@@ -16,6 +16,7 @@ return (new PhpCsFixer\Config())
         'blank_line_before_statement' => [
             'statements' => ['return']
         ],
+        'explicit_string_variable' => false,
         'increment_style' => [
             'style' => 'post'
         ],

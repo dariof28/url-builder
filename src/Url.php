@@ -41,7 +41,7 @@ class Url
         if (!empty($this->params)) {
             $url = trim($url, '/');
             $params = http_build_query($this->params);
-            $url .= "?${params}";
+            $url .= "?$params";
         }
 
         return $url;
